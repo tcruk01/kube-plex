@@ -77,8 +77,8 @@ func launch() int {
 	}
 	cargs = append(cargs, a[1:]...)
 	klog.Infof("Transcode requested with command %v, args = %v", a[0], cargs)
-        rcargs = append(cargs, ffmpeg.RemoveOptsCrf(a[1:]...)
-	klog.Infof("Testing - command %v, args = %v", a[0], cargs)
+//      rcargs = append(cargs, ffmpeg.RemoveOptsCrf(a[1:]...)
+//	klog.Infof("Testing - command %v, args = %v", a[0], rcargs)
 
 	cmd := exec.Command(cpath, cargs...)
 	cmd.Stdout = os.Stdout
