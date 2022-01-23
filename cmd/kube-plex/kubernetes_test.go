@@ -233,7 +233,6 @@ func Test_generateJob(t *testing.T) {
 						Command:      []string{"cp", "/transcode-launcher", "/shared/transcode-launcher"},
 						VolumeMounts: []corev1.VolumeMount{{Name: "shared", MountPath: "/shared", ReadOnly: false}},
 					}},
-					NodeSelector:  map[string]string{"beta.kubernetes.io/arch": "amd64"},
 					RestartPolicy: corev1.RestartPolicyNever,
 					Containers: []corev1.Container{{
 						Name:    "plex",
