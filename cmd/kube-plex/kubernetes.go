@@ -36,6 +36,10 @@ func generateJob(cwd string, m PmsMetadata, env []string, args []string) (*batch
 			BackoffLimit:            &backoff,
 			TTLSecondsAfterFinished: &ttl,
 			Template: corev1.PodTemplateSpec{
+                                      NodeSelector: map[string]string{
+                                              "kubernetes.io/arch": "arm64",
+                                      },
+
 				Spec: corev1.PodSpec{
 					RestartPolicy: corev1.RestartPolicyNever,
 					Containers: []corev1.Container{
