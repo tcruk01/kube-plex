@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/munnerz/kube-plex/internal/ffmpeg"
+	"github.com/tcruk01/kube-plex/internal/ffmpeg"
 	batch "k8s.io/api/batch/v1"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

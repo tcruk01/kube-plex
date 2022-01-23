@@ -7,8 +7,8 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/munnerz/kube-plex/internal/ffmpeg"
-	"github.com/munnerz/kube-plex/internal/logger"
+	"github.com/tcruk01/kube-plex/internal/ffmpeg"
+	"github.com/tcruk01/kube-plex/internal/logger"
 	"k8s.io/klog/v2"
 )
 

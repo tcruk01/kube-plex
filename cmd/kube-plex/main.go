@@ -10,8 +10,8 @@ import (
 	"path/filepath"
 	"regexp"
 
-	"github.com/munnerz/kube-plex/internal/ffmpeg"
-	"github.com/munnerz/kube-plex/internal/logger"
+	"github.com/tcruk01/kube-plex/internal/ffmpeg"
+	"github.com/tcruk01/kube-plex/internal/logger"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
