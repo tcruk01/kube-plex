@@ -16,7 +16,7 @@ func Escape(s string) string {
 }
 
 // RemoveOptsCrf removes crf option from given string
-func RemoveOptsCrf(s string) string {
-        re := regexp.MustCompile(`/-crf:[0-9]\S[0-9]\d{1,2}`)
-        return string(re.ReplaceAll([]byte(s), "")
-}
+//func RemoveOptsCrf(s string) string {
+//        re := regexp.MustCompile(`/-crf:[0-9]\S[0-9]\d{1,2}`)
+//        return string(re.ReplaceAll([]byte(s), "")
+//}
