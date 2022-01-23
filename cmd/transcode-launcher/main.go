@@ -7,8 +7,8 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/tcruk01/kube-plex/internal/ffmpeg"
-	"github.com/tcruk01/kube-plex/internal/logger"
+	"github.com/munnerz/kube-plex/internal/ffmpeg"
+	"github.com/munnerz/kube-plex/internal/logger"
 	"k8s.io/klog/v2"
 )
 
@@ -66,7 +66,6 @@ func launch() int {
 	a := flag.Args()
 
 	cpath := a[0]
-	rcargs := []string{}
 	cargs := []string{}
 	if *logLevel != "" {
 		klog.Infof("Setting debug level to %s on transcode process", *logLevel)
@@ -76,10 +75,8 @@ func launch() int {
 		)
 	}
 	cargs = append(cargs, a[1:]...)
-	klog.Infof("Transcode requested with command %v, args = %v", a[0], cargs)
-//      rcargs = append(cargs, ffmpeg.RemoveOptsCrf(a[1:]...)
-//	klog.Infof("Testing - command %v, args = %v", a[0], rcargs)
 
+	klog.Infof("Transcode requested with command %v, args = %v", a[0], cargs)
 	cmd := exec.Command(cpath, cargs...)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr

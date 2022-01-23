@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/tcruk01/kube-plex/internal/ffmpeg"
+	"github.com/munnerz/kube-plex/internal/ffmpeg"
 	batch "k8s.io/api/batch/v1"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -37,9 +37,9 @@ func generateJob(cwd string, m PmsMetadata, env []string, args []string) (*batch
 			TTLSecondsAfterFinished: &ttl,
 			Template: corev1.PodTemplateSpec{
 				Spec: corev1.PodSpec{
-//					NodeSelector: map[string]string{
-//						"kubernetes.io/arch": "amd64",
-//					},
+					NodeSelector: map[string]string{
+						"beta.kubernetes.io/arch": "amd64",
+					},
 					RestartPolicy: corev1.RestartPolicyNever,
 					Containers: []corev1.Container{
 						{

@@ -1,4 +1,4 @@
-module github.com/tcruk01/kube-plex
+module github.com/munnerz/kube-plex
 
 go 1.16
 
